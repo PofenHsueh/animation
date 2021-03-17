@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <HelloWorld></HelloWorld>
+    <!-- <div>
+      <v-btn @click="loading = true"></v-btn>
+      <Loading
+        :active.sync="loading"
+        :is-full-page="fullPage"
+        :loader="'dots'"
+        :opacity="10"
+        :background-color="'#001f52'"
+        :color="'#ff3e3e'"
+      ></Loading>
+    </div> -->
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import HelloWorld from "@/components/HelloWorld.vue";
 export default {
-  name: "App",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      loading: false,
+      fullPage: true
+    };
   }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
